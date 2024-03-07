@@ -44,8 +44,24 @@ void display() { //prosedur/function untuk output
 	}
 }
 
+void BubbleSort() { //prosedur/function untuk mengurutkan array dengan metode bublesort
+
+	for (int pass = 1; pass < n; pass++) //looping dengan variabel pass dimualai dari 1 hingga n - 1
+	{
+		for (int j = 0; j < n - pass; j++) { //looping dengan j dimulai dari nol hingga n - 1 - pass
+			if (a[j] > a[j + 1]) { //jika nilai array index ke j lebih besar dari array index ke j+1
+				int temp = a[j]; //simpan nilai index ke j di variabel sementara bernama temp
+				a[j] = a[j + 1]; //assign nilai array index ke j+1 ke array index j
+				a[j + 1] = temp; //assign variabel yang berisi array index ke j ke array index j+1
+			}
+		}
+	}
+}
+
 int main()
 {
-	input();
-	display();
+	input(); //memanggil input()
+	BubbleSort(); //memanggil BubbleSort()
+	display(); //memanggil display()
+	return 0;
 }
